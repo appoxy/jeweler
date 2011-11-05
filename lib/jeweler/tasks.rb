@@ -61,7 +61,7 @@ class Jeweler
 
       gemspec_building_block.call(yielded_gemspec) if gemspec_building_block
 
-      ! yielded_gemspec.version.nil?
+      !yielded_gemspec.version.nil?
     end
 
     def define
