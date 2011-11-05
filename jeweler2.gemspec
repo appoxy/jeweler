@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "jeweler2"
-  s.version = "2.0.2"
+  s.version = "2.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Josh Nichols"]
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
     "README.markdown"
   ]
   s.files = [
-    "lib/jeweler.rb",
     "lib/jeweler/commands.rb",
     "lib/jeweler/commands/build_gem.rb",
     "lib/jeweler/commands/check_dependencies.rb",
@@ -58,7 +57,8 @@ Gem::Specification.new do |s|
     "lib/jeweler/specification.rb",
     "lib/jeweler/tasks.rb",
     "lib/jeweler/version.rb",
-    "lib/jeweler/version_helper.rb"
+    "lib/jeweler/version_helper.rb",
+    "lib/jeweler2.rb"
   ]
   s.homepage = "http://github.com/appoxy/jeweler"
   s.licenses = ["MIT"]
