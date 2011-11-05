@@ -24,7 +24,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.authors = ["Josh Nichols"]
   gem.email = "josh@technicalpickles.com"
-  gem.files.include %w(lib/jeweler/templates/.document lib/jeweler/templates/.gitignore)
+  #gem.files.include %w(lib/jeweler/templates/.document lib/jeweler/templates/.gitignore)
 
   # dependencies defined in Gemfile
 end
