@@ -1,11 +1,6 @@
 require 'test/unit'
 require 'rubygems'
 
-begin
-  require 'ruby-debug'
-rescue LoadError
-end
-
 require 'bundler'
 begin
   Bundler.setup(:default, :development)
@@ -23,10 +18,8 @@ require 'construct'
 require 'git'
 require 'time'
 
-$LOAD_PATH.unshift(File.dirname(__FILE__) + '/../lib')
-require 'jeweler'
+require_relative '../lib/jeweler2'
 
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'shoulda_macros/jeweler_macros'
 
 TMP_DIR = '/tmp/jeweler_test'

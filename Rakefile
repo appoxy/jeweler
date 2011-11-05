@@ -13,7 +13,7 @@ end
 #$LOAD_PATH.unshift('lib')
 
 #require 'rake'
-require_relative 'lib/jeweler'
+require_relative 'lib/jeweler2'
 
 Jeweler::Tasks.new do |gem|
   gem.name = "jeweler2"
