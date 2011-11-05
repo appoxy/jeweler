@@ -25,8 +25,10 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Josh Nichols"]
   gem.email = "josh@technicalpickles.com"
   #gem.files.include %w(lib/jeweler/templates/.document lib/jeweler/templates/.gitignore)
-
+  #gem.files.include %w(lib)
   # dependencies defined in Gemfile
+  gem.files = Dir.glob('lib/**/*.rb')
+  gem.files.exclude %w(lib/jeweler/templates) # exclude temporary directory
 end
 
 Jeweler::RubygemsDotOrgTasks.new
