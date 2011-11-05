@@ -24,8 +24,9 @@ class Jeweler
         regenerate_gemspec!
         commit_gemspec! if gemspec_changed?
 
-        output.puts "Pushing current branch to origin"
-        repo.push('origin', repo.current_branch)
+        branch = repo.current_branch
+        output.puts "Pushing #{branch} to origin"
+        repo.push('origin', branch)
       end
 
       def clean_staging_area?
