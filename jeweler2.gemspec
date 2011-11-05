@@ -48,6 +48,7 @@ Gem::Specification.new do |s|
     "features/tasks/version.feature",
     "features/tasks/version_bumping.feature",
     "jeweler.gemspec",
+    "jeweler2.gemspec",
     "lib/jeweler.rb",
     "lib/jeweler/commands.rb",
     "lib/jeweler/commands/build_gem.rb",
