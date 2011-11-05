@@ -18,7 +18,9 @@ class Jeweler
         end
 
         #repo.checkout('master')
-        repo.push
+        branch = repo.current_branch
+        output.puts "Pushing #{branch} to origin"
+        repo.push('origin', branch)
         
         if release_not_tagged?
           output.puts "Tagging #{release_tag}"
