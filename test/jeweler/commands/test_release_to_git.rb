@@ -9,7 +9,7 @@ class Jeweler
           setup do
             stub(@command).clean_staging_area? { true }
 
-            stub(@repo).checkout(anything)
+            #stub(@repo).checkout(anything)
             stub(@repo) do
               add_tag(anything)
               push(anything, anything)
@@ -20,10 +20,6 @@ class Jeweler
             stub(@command).release_not_tagged? { true }
 
             @command.run
-          end
-
-          should "checkout master" do
-            assert_received(@repo) {|repo| repo.checkout('master') }
           end
 
           should "push" do
@@ -54,17 +50,11 @@ class Jeweler
           setup do
             stub(@command).clean_staging_area? { true }
 
-            stub(@repo).checkout(anything)
-
             stub(@repo).push
 
             stub(@command).release_not_tagged? { false }
 
             @command.run
-          end
-
-          should "checkout master" do
-            assert_received(@repo) {|repo| repo.checkout('master') }
           end
 
           should "push" do

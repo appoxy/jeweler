@@ -17,7 +17,7 @@ class Jeweler
           raise "Unclean staging area! Be sure to commit or .gitignore everything first. See `git status` above."
         end
 
-        repo.checkout('master')
+        #repo.checkout('master')
         repo.push
         
         if release_not_tagged?

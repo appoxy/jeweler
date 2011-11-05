@@ -10,8 +10,6 @@ class Jeweler
           setup do
             stub(@command).clean_staging_area? { true }
 
-            stub(@repo).checkout(anything)
-
             stub(@command).regenerate_gemspec!
 
             stub(@command).gemspec_changed? { true }
@@ -22,10 +20,6 @@ class Jeweler
             stub(@command).release_not_tagged? { true }
 
             @command.run
-          end
-
-          should "checkout master" do
-            assert_received(@repo) {|repo| repo.checkout('master') }
           end
 
           should "regenerate gemspec" do
@@ -64,8 +58,6 @@ class Jeweler
           setup do
             stub(@command).clean_staging_area? { true }
 
-            stub(@repo).checkout(anything)
-
             stub(@command).regenerate_gemspec!
 
             stub(@command).gemspec_changed? { false }
@@ -78,9 +70,6 @@ class Jeweler
             @command.run
           end
 
-          should "checkout master" do
-            assert_received(@repo) {|repo| repo.checkout('master') }
-          end
 
           should "regenerate gemspec" do
             assert_received(@command) {|command| command.regenerate_gemspec! }
@@ -96,8 +85,6 @@ class Jeweler
           setup do
             stub(@command).clean_staging_area? { true }
 
-            stub(@repo).checkout(anything)
-
             stub(@command).regenerate_gemspec!
 
             stub(@command).gemspec_changed? { true }
@@ -110,9 +97,6 @@ class Jeweler
             @command.run
           end
 
-          should "checkout master" do
-            assert_received(@repo) {|repo| repo.checkout('master') }
-          end
 
           should "regenerate gemspec" do
             assert_received(@command) {|command| command.regenerate_gemspec! }

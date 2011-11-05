@@ -1,6 +1,5 @@
 # encoding: utf-8
 
-require 'rubygems'
 require 'bundler'
 
 begin
@@ -11,15 +10,15 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
-$LOAD_PATH.unshift('lib')
+#$LOAD_PATH.unshift('lib')
 
-require 'rake'
-require 'jeweler'
+#require 'rake'
+require_relative 'lib/jeweler'
 
 Jeweler::Tasks.new do |gem|
-  gem.name = "jeweler"
+  gem.name = "jeweler2"
   gem.version = Jeweler::Version::STRING
-  gem.homepage = "http://github.com/technicalpickles/jeweler"
+  gem.homepage = "http://github.com/appoxy/jeweler"
   gem.summary = "Opinionated tool for creating and managing RubyGem projects"
   gem.description = "Simple and opinionated helper for creating Rubygem projects on GitHub"
   gem.license = "MIT"

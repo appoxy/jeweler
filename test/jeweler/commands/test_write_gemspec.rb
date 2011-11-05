@@ -26,7 +26,7 @@ class Jeweler
           @command.gemspec_helper = @gemspec_helper
 
           @now = Time.now
-          stub(Time.now).now { @now }
+          stub(Time.now.getutc).now { @now }
         end
 
         should "refresh version" do
@@ -47,7 +47,7 @@ class Jeweler
 
         should "update gemspec date to the beginning of today" do
           @command.run
-          assert_equal Time.mktime(@now.year, @now.month, @now.day, 0, 0), @gemspec.date
+          assert_equal Time.mktime(@now.year, @now.month, @now.day, 0, 0).getutc, @gemspec.date
         end
 
         should "write gemspec" do

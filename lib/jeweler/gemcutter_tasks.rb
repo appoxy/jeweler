@@ -1,4 +1,4 @@
-require 'jeweler/rubygems_tasks'
+require_relative 'rubygems_tasks'
 
 class Jeweler
   # Deprecated tasks for publishing to Gemcutter. See Jeweler::RubygemsDotOrgTasks

@@ -1,6 +1,6 @@
 require 'pathname'
 require 'date'
-require 'jeweler/version'
+require_relative 'jeweler/version'
 
 # A Jeweler helps you craft the perfect Rubygem. Give him a gemspec, and he takes care of the rest.
 #
@@ -9,21 +9,21 @@ require 'jeweler/version'
 # * http://wiki.github.com/technicalpickles/jeweler/create-a-new-project
 # * http://wiki.github.com/technicalpickles/jeweler/configure-an-existing-project
 class Jeweler
-  require 'jeweler/errors'
+  require_relative 'jeweler/errors'
   require 'rubygems/user_interaction'
 
-  autoload :Generator,      'jeweler/generator'
+  require_relative  'jeweler/generator'
 
-  autoload :Commands,       'jeweler/commands'
+  require_relative       'jeweler/commands'
   
-  autoload :VersionHelper,  'jeweler/version_helper'
-  autoload :GemSpecHelper,  'jeweler/gemspec_helper'
+  require_relative 'jeweler/version_helper'
+  require_relative 'jeweler/gemspec_helper'
 
-  autoload :Tasks,          'jeweler/tasks'
-  autoload :RubygemsDotOrgTasks,  'jeweler/rubygems_dot_org_tasks'
-  autoload :GemcutterTasks, 'jeweler/gemcutter_tasks'
-  autoload :RubyforgeTasks, 'jeweler/rubyforge_tasks'
-  autoload :Specification,  'jeweler/specification'
+  require_relative         'jeweler/tasks'
+  require_relative 'jeweler/rubygems_dot_org_tasks'
+  require_relative 'jeweler/gemcutter_tasks'
+  require_relative 'jeweler/rubyforge_tasks'
+  require_relative  'jeweler/specification'
 
   attr_reader :gemspec, :gemspec_helper, :version_helper
   attr_accessor :base_dir, :output, :repo, :commit

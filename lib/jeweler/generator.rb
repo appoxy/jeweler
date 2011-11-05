@@ -7,7 +7,7 @@ require 'uri'
 require 'fileutils'
 require 'pathname'
 
-require 'jeweler/version'
+require_relative 'version'
 
 class Jeweler
   class NoGitUserName < StandardError
@@ -27,23 +27,23 @@ class Jeweler
 
   # Generator for creating a jeweler-enabled project
   class Generator    
-    require 'jeweler/generator/options'
-    require 'jeweler/generator/application'
+    require_relative 'generator/options'
+    require_relative 'generator/application'
 
-    require 'jeweler/generator/github_mixin'
+    require_relative 'generator/github_mixin'
 
-    require 'jeweler/generator/bacon_mixin'
-    require 'jeweler/generator/micronaut_mixin'
-    require 'jeweler/generator/minitest_mixin'
-    require 'jeweler/generator/rspec_mixin'
-    require 'jeweler/generator/shoulda_mixin'
-    require 'jeweler/generator/testspec_mixin'
-    require 'jeweler/generator/testunit_mixin'
-    require 'jeweler/generator/riot_mixin'
-    require 'jeweler/generator/shindo_mixin'
+    require_relative 'generator/bacon_mixin'
+    require_relative 'generator/micronaut_mixin'
+    require_relative 'generator/minitest_mixin'
+    require_relative 'generator/rspec_mixin'
+    require_relative 'generator/shoulda_mixin'
+    require_relative 'generator/testspec_mixin'
+    require_relative 'generator/testunit_mixin'
+    require_relative 'generator/riot_mixin'
+    require_relative 'generator/shindo_mixin'
 
-    require 'jeweler/generator/rdoc_mixin'
-    require 'jeweler/generator/yard_mixin'
+    require_relative 'generator/rdoc_mixin'
+    require_relative 'generator/yard_mixin'
 
     attr_accessor :target_dir, :user_name, :user_email, :summary, :homepage,
                   :description, :project_name, :github_username, :github_token,

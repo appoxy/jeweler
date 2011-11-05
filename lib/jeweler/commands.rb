@@ -1,20 +1,20 @@
 class Jeweler
   module Commands
-    autoload :BuildGem, 'jeweler/commands/build_gem'
-    autoload :InstallGem, 'jeweler/commands/install_gem'
-    autoload :CheckDependencies, 'jeweler/commands/check_dependencies'
-    autoload :ReleaseToGit, 'jeweler/commands/release_to_git'
-    autoload :ReleaseGemspec, 'jeweler/commands/release_gemspec'
-    autoload :ReleaseToRubygems, 'jeweler/commands/release_to_rubygems'
-    autoload :ValidateGemspec, 'jeweler/commands/validate_gemspec'
-    autoload :WriteGemspec, 'jeweler/commands/write_gemspec'
+    require_relative 'commands/build_gem'
+    require_relative 'commands/install_gem'
+    require_relative 'commands/check_dependencies'
+    require_relative 'commands/release_to_git'
+    require_relative 'commands/release_gemspec'
+    require_relative 'commands/release_to_rubygems'
+    require_relative 'commands/validate_gemspec'
+    require_relative 'commands/write_gemspec'
 
     module Version
-      autoload :Base,      'jeweler/commands/version/base'
-      autoload :BumpMajor, 'jeweler/commands/version/bump_major'
-      autoload :BumpMinor, 'jeweler/commands/version/bump_minor'
-      autoload :BumpPatch, 'jeweler/commands/version/bump_patch'
-      autoload :Write,     'jeweler/commands/version/write'
+      require_relative 'commands/version/base'
+      require_relative 'commands/version/bump_major'
+      require_relative 'commands/version/bump_minor'
+      require_relative 'commands/version/bump_patch'
+      require_relative 'commands/version/write'
     end
   end
 end
