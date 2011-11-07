@@ -9,7 +9,7 @@ Jeweler provides the noble ruby developer with two primary features:
 
 Use RubyGems to install the heck out of jeweler to get started: 
 
-    $ gem install jeweler
+    $ gem install jeweler2
 
 With jeweler installed, you can use the `jeweler` command to generate a new project. For the most basic use, just give it a name:
 
