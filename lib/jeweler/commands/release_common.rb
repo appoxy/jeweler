@@ -1,6 +1,6 @@
 class Jeweler
   module Commands
-    class ReleaseCommon
+    module ReleaseCommon
 
 
       def clean_staging_area?
