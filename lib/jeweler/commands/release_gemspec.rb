@@ -1,8 +1,12 @@
 require 'pathname'
+require_relative 'release_common'
 
 class Jeweler
   module Commands
     class ReleaseGemspec
+
+      include ReleaseCommon
+
       attr_accessor :gemspec, :version, :repo, :output, :gemspec_helper, :base_dir
 
       def initialize(attributes = {})
@@ -27,11 +31,6 @@ class Jeweler
         branch = repo.current_branch
         output.puts "Pushing #{branch} to origin"
         repo.push('origin', branch)
-      end
-
-      def clean_staging_area?
-        # surprisingly simpler than ruby-git
-        `git ls-files --deleted --modified --exclude-standard` == ""
       end
 
       def commit_gemspec!
