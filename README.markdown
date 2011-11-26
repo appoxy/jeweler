@@ -89,7 +89,7 @@ If you've been following along so far, your gem is just a blank slate. You're go
 
 You can customize your gem by updating your `Rakefile`. With a newly generated project, it will look something like this:
 
-    require 'jeweler'
+    require 'jeweler2'
     Jeweler::Tasks.new do |gem|
       # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
       gem.name = "whatwhatwhat"
