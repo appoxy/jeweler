@@ -57,7 +57,9 @@ class Jeweler
       def working_subdir
         return @working_subdir if @working_subdir
         cwd = base_dir_path
-        @working_subdir = cwd.relative_path_from(Pathname.new(repo.dir.path))
+        path = repo.dir.path
+        path = path.encode('UTF-8') if not RUBY_VERSION[/^1\.8\./]
+        @working_subdir = cwd.relative_path_from(Pathname.new(path))
         @working_subdir
       end
 
