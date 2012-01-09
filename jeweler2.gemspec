@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "lib/jeweler/commands/build_gem.rb",
     "lib/jeweler/commands/check_dependencies.rb",
     "lib/jeweler/commands/install_gem.rb",
+    "lib/jeweler/commands/release_common.rb",
     "lib/jeweler/commands/release_gemspec.rb",
     "lib/jeweler/commands/release_to_git.rb",
     "lib/jeweler/commands/release_to_rubygems.rb",
