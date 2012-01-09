@@ -1,8 +1,12 @@
 require 'pathname'
+require_relative 'release_common'
 
 class Jeweler
   module Commands
     class ReleaseGemspec
+
+      include ReleaseCommon
+
       attr_accessor :gemspec, :version, :repo, :output, :gemspec_helper, :base_dir
 
       def initialize(attributes = {})
@@ -29,11 +33,6 @@ class Jeweler
         repo.push('origin', branch)
       end
 
-      def clean_staging_area?
-        # surprisingly simpler than ruby-git
-        `git ls-files --deleted --modified --others --exclude-standard` == ""
-      end
-
       def commit_gemspec!
         gemspec_gitpath = working_subdir.join(gemspec_helper.path)
         repo.add(gemspec_gitpath.to_s)
@@ -58,7 +57,9 @@ class Jeweler
       def working_subdir
         return @working_subdir if @working_subdir
         cwd = base_dir_path
-        @working_subdir = cwd.relative_path_from(Pathname.new(repo.dir.path))
+        path = repo.dir.path
+        path = path.encode('UTF-8') if not RUBY_VERSION[/^1\.8\./]
+        @working_subdir = cwd.relative_path_from(Pathname.new(path))
         @working_subdir
       end
 

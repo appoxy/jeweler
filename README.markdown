@@ -9,7 +9,7 @@ Jeweler provides the noble ruby developer with two primary features:
 
 Use RubyGems to install the heck out of jeweler to get started: 
 
-    $ gem install jeweler
+    $ gem install jeweler2
 
 With jeweler installed, you can use the `jeweler` command to generate a new project. For the most basic use, just give it a name:
 
@@ -89,7 +89,7 @@ If you've been following along so far, your gem is just a blank slate. You're go
 
 You can customize your gem by updating your `Rakefile`. With a newly generated project, it will look something like this:
 
-    require 'jeweler'
+    require 'jeweler2'
     Jeweler::Tasks.new do |gem|
       # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
       gem.name = "whatwhatwhat"

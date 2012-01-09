@@ -1,6 +1,11 @@
+
+require_relative 'release_common'
+
 class Jeweler
   module Commands
     class ReleaseToGit
+      include ReleaseCommon
+
       attr_accessor :gemspec, :version, :repo, :output, :gemspec_helper, :base_dir
 
       def initialize(attributes = {})
@@ -29,10 +34,6 @@ class Jeweler
           output.puts "Pushing #{release_tag} to origin"
           repo.push('origin', release_tag)
         end
-      end
-
-      def clean_staging_area?
-        `git ls-files --deleted --modified --others --exclude-standard` == ""
       end
 
       def release_tag
