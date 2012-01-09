@@ -1,4 +1,3 @@
--
 require 'rubygems/specification'
 
 class Jeweler
